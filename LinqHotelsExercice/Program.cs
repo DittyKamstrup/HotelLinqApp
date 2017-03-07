@@ -143,20 +143,92 @@ namespace LinqHotelsExercise
 
 
             // 1) List full details of all Hotels:
+            var hotelList =
+                from h in hotels
+                select h;
+
+            Console.WriteLine("1)");
+
+            foreach (var h in hotelList)
+            {
+                Console.WriteLine(h.ToString());
+            }
 
             // 2) List full details of all hotels in Roskilde:
+            var roskildeHotelList =
+                from h in hotels
+                where h.Address.Contains("Roskilde")
+                select h;
+
+            Console.WriteLine("2)");
+
+            foreach (var h in roskildeHotelList)
+            {
+                Console.WriteLine(h.ToString());
+            }
 
             // 3) List the names of all hotels in Roskilde:
+            var hotelNames =
+                from h in hotels
+                where h.Address.Contains("Roskilde")
+                select h.Name;
+
+            Console.WriteLine("3)");
+
+            foreach (var h in hotelNames)
+            {
+                Console.WriteLine(h.ToString());
+            }
 
             // 4) List all double rooms with a price below 400 pr night:
+            var dRoomsUnder400 =
+                from r in rooms
+                where r.Price < 400 && r.Types == 'D'
+                select r;
+
+            Console.WriteLine("4)");
+
+            foreach (var r in dRoomsUnder400)
+            {
+                Console.WriteLine(r.ToString());
+            }
 
             // 5) List all double or family rooms with a price below 400 pr night in ascending order of price:
+            var dOrFRoomsUnder400 =
+                from r in rooms
+                where r.Price < 400 && (r.Types == 'D' || r.Types == 'F')
+                orderby r.Price
+                select r;
+
+            Console.WriteLine("5)");
+
+            foreach (var r in dOrFRoomsUnder400)
+            {
+                Console.WriteLine(r.ToString());
+            }
 
             // 6) List all hotels that starts with 'P':
+            var hotelsWithP =
+                from h in hotels
+                where h.Name.StartsWith("P")
+                select h;
+
+            Console.WriteLine("6)");
+
+            foreach (var h in hotelsWithP)
+            {
+                Console.WriteLine(h.ToString());
+            }
 
             // 7) List the number of hotels:
+            var sumOfHotels = hotels.Count();
+
+            Console.WriteLine("7)");
+
+            Console.WriteLine(sumOfHotels);
 
             // 8) List the number of hotels in Roskilde:
+            var sumOfHotelsInRoskilde = 
 
             // 9) what is the average price of a room:
 
