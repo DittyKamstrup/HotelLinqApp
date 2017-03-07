@@ -256,15 +256,17 @@ namespace LinqHotelsExercise
 
             Console.WriteLine("Average Scandic Room Price: " + (int)averageScandicRoomPrice.Average());
 
-            //11) what is the average price of a room at Hotel Scandic:
+            //11) what is the total revenue per night from all double rooms:
 
 
-            //12) what is the total revenue per night from all double rooms:
+            //12) List price and type of all rooms at Hotel Prindsen:
 
-            //13) List price and type of all rooms at Hotel Prindsen:
 
-            //14) List distinct price and type of all rooms at Hotel Prindsen:
-            //List distinct price and type of all rooms at Hotel Prindsen
+            //13) List distinct price and type of all rooms at Hotel Prindsen:
+
+
+            //14) Join the Hotels and Rooms
+
 
             Console.ReadLine();
 
