@@ -221,20 +221,43 @@ namespace LinqHotelsExercise
             }
 
             // 7) List the number of hotels:
-            var sumOfHotels = hotels.Count();
+            var sumOfHotels =
+                hotels.Count();
 
             Console.WriteLine("7)");
 
             Console.WriteLine(sumOfHotels);
 
             // 8) List the number of hotels in Roskilde:
-            var sumOfHotelsInRoskilde = 
+            var sumOfHotelsInRoskilde =
+                hotels.Count(hotel => hotel.Address.Contains("Roskilde"));
+
+            Console.WriteLine("8)");
+
+            Console.WriteLine(sumOfHotelsInRoskilde);
 
             // 9) what is the average price of a room:
+            var averageRoomPrice =
+                rooms.Average(room => room.Price);
+
+            Console.WriteLine("9)");
+
+            Console.WriteLine(averageRoomPrice);
 
             //10) what is the average price of a room at Hotel Scandic:
+            var averageScandicRoomPrice =
+                from r in rooms
+                join h in hotels
+                    on r.Hotel.HotelNo equals h.HotelNo
+                where h.Name.Equals("Scandic")
+                select r.Price;
+
+            Console.WriteLine("10)");
+
+            Console.WriteLine("Average Scandic Room Price: " + (int)averageScandicRoomPrice.Average());
 
             //11) what is the average price of a room at Hotel Scandic:
+
 
             //12) what is the total revenue per night from all double rooms:
 
