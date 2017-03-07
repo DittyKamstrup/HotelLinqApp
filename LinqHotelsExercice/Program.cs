@@ -257,7 +257,7 @@ namespace LinqHotelsExercise
             Console.WriteLine("Average Scandic Room Price: " + (int)averageScandicRoomPrice.Average());
 
             //11) what is the total revenue per night from all double rooms:
-
+            var totalRevenueFromDRooms =
 
             //12) List price and type of all rooms at Hotel Prindsen:
 
